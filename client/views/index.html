@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<!-- myApp can be whatever we declare in client. ie cartApp, blingApp, crappyApp  -->
+<html ng-app= 'myApp'>
   <head>
     <meta charset="utf-8">
-    <title>Chi MEAN</title>
+    <title>ERIN and TEIGEN WHOOP ANGULAR</title>
 
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -12,7 +13,25 @@
 
   </head>
   <body>
+    <div class="container">
+      <h2>ERIN and TEIGEN WHOOP ANGULAR</h2>
+      <div ng-controller= 'InputController' >
+        <input type="text" placeholder= 'Movie' ng-model=newMovie.title>
+        <input type="text" placeholder= 'Description'ng-model=newMovie.description>
+        <input type="text" placeholder= 'Director'ng-model=newMovie.director>
+        <input type="text" placeholder= 'Run Time'ng-model=newMovie.runTime>
+        <button type="button" ng-click="addMovie()">Submit</button>
+      </div>
+      <div ng-controller= 'DisplayController' >
+        <div ng-repeat='movie in allTheMoviesObject.movieArray'>
+          <!-- {{ movie.title + "  " + movie.director + "  " + movie.description + "  " + movie.runTime}} -->
+          {{movie.director}}
+          {{movie.description}}
+          {{movie.runTime}}
+          {{movie.title}}
+        </div>
+    </div>
 
-
+    </div>
   </body>
 </html>
