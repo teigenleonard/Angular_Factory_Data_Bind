@@ -3,7 +3,7 @@ var myApp = angular.module( 'myApp', []);
 myApp.controller( 'InputController', ['$scope','MovieService', function($scope, MovieService){
   // console.log('InputController');
   $scope.newMovie = MovieService.movie;
-  console.log(Movieservice.movie);
+  console.log(MovieService.movie);
   $scope.addMovie = MovieService.addMovie;
 }]);
 
@@ -28,11 +28,15 @@ myApp.factory('MovieService', [function(){
     movieArray : movieArray
   };
 
-function addMovie(){
+function addMovie(movie){
   // console.log('addMovie');
   var savedMovie = angular.copy(movie);
   movieArray.push(savedMovie);
   console.log(movieArray);
+  movie.title = '';
+  movie.director = '';
+  movie.description = '';
+  movie.runTime = '';
 }
 
 

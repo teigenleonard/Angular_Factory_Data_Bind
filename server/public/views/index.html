@@ -14,21 +14,22 @@
   </head>
   <body>
     <div class="container">
-      <h2>ERIN and TEIGEN WHOOP ANGULAR</h2>
+      <h2>WHAT MOVIE YOU FEEL LIKE?</h2>
       <div ng-controller= 'InputController' >
         <input type="text" placeholder= 'Movie' ng-model=newMovie.title>
-        <input type="text" placeholder= 'Description'ng-model=newMovie.description>
         <input type="text" placeholder= 'Director'ng-model=newMovie.director>
+        <input type="text" placeholder= 'Description'ng-model=newMovie.description>
         <input type="text" placeholder= 'Run Time'ng-model=newMovie.runTime>
-        <button type="button" ng-click="addMovie()">Submit</button>
+        <button type="button" ng-click="addMovie(newMovie)">Submit</button>
       </div>
       <div ng-controller= 'DisplayController' >
         <div ng-repeat='movie in allTheMoviesObject.movieArray'>
           <!-- {{ movie.title + "  " + movie.director + "  " + movie.description + "  " + movie.runTime}} -->
+          {{movie.title}}
           {{movie.director}}
           {{movie.description}}
-          {{movie.runTime}}
-          {{movie.title}}
+          {{movie.runTime + 'minutes'}}
+
         </div>
     </div>
 
